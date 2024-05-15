@@ -55,7 +55,13 @@ mod tests {
     fn problem_b() {
         let answer = 126;
 
-        let result = (100..=999).into_iter().filter(|x| ddr_of(*x) == 0).count();
+        let result = 
+            // Every three digit number.
+            (100..=999).into_iter()
+            // Only those with a DDR of 0.
+            .filter(|x| ddr_of(*x) == 0)
+            // Count them
+            .count();
         assert_eq!(result, answer);
     }
 
